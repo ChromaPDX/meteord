@@ -8,8 +8,9 @@ BUNDLE_DIR=/tmp/bundle-dir
 cp -R /app $COPIED_APP_PATH
 cd $COPIED_APP_PATH
 
+echo "npm install @ ${BUNDLE_DIR}"
+meteor npm install
 echo "meteor build @ ${BUNDLE_DIR}"
-
 meteor build --directory $BUNDLE_DIR --server=http://localhost:3000
 
 cd $BUNDLE_DIR/bundle/programs/server/
